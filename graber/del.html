@@ -1,0 +1,1257 @@
+<!doctype html>
+<html
+    lang="en"
+    class="no-js"
+>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwYPV15QGwYFXFlXDgU="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:11,2:10,3:8,4:12,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){if(window.addEventListener){var e=t("handle"),n=t("ee");t(1),window.addEventListener("click",function(){e("inc",["ck"])},!1),window.addEventListener("hashchange",function(){e("inc",["hc"])},!1),n.on("pushState-start",function(){e("inc",["ps"])})}},{1:9,ee:"QJf3ax",handle:"D5DuLP"}],6:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],7:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:11,2:10,3:9,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t,e){function n(){return s}if(t[1]){var r=t[1];if("function"==typeof r){var s=a(r,"nr@wrapped",function(){return i(r,"fn-",n,r.name||"anonymous")});this.wrapped=t[1]=s,o.emit("initEventContext",[t,e],this.wrapped)}else"function"==typeof r.handleEvent&&i.inPlace(r,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],10:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){function r(){return a}this.ctx={};var a={"nr@context":this.ctx};o.emit("initTimerContext",[t,n],a),t[0]=i(t[0],"fn-",r,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],12:[function(t,e){function n(){f.inPlace(this,p,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:8,2:26,ee:"QJf3ax"}],13:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1),u=window.XMLHttpRequest;t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof u&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:14,3:12,4:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],14:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],15:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:24,2:25,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:24,2:15,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,13,7,6,5]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"5588594","transactionName":"Y1BRbUUFWkMEWxYMV1oadUxZB0BZClZNCV5ZG0RcVUpDRxIWAxVIRxtGSlIWGkYMXRUWFllUWlcNIltcCVcVAEpH","agent":"js-agent.newrelic.com/nr-768.min.js","errorBeacon":"bam.nr-data.net","queueTime":0,"licenseKey":"0ed0ce50b0","beacon":"bam.nr-data.net","applicationTime":306}</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>People Following valerianochka — Users at Last.fm</title>
+        <meta name="description" content="Listen to music from valerianochka’s library (60,148 tracks played). Get your own music profile at Last.fm, the world’s largest social music platform.">
+
+
+
+        <link rel="alternate" hreflang="en" href="http://www.last.fm/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="de" href="http://www.last.fm/de/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="es" href="http://www.last.fm/es/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="fr" href="http://www.last.fm/fr/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="it" href="http://www.last.fm/it/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="ja" href="http://www.last.fm/ja/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="pl" href="http://www.last.fm/pl/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="pt" href="http://www.last.fm/pt/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="ru" href="http://www.last.fm/ru/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="sv" href="http://www.last.fm/sv/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="tr" href="http://www.last.fm/tr/user/valerianochka/followers?page=2" />
+
+        <link rel="alternate" hreflang="zh" href="http://www.last.fm/zh/user/valerianochka/followers?page=2" />
+
+
+        <script>(function(e) { e.className = e.className.replace(/\bno-js\b/,'js'); })(document.documentElement)</script>
+
+
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-1966571-17', 'auto', 'notTealium');
+            ga('notTealium.send', 'pageview', '/user/followers');
+        </script>
+
+        <link rel="icon" href="//static-web.last.fm/static/images/favicon.702b239b6194.ico">
+
+        <link rel="stylesheet" href="/static/CACHE/css/75be28ec5263.css" type="text/css"  data-stylesheet-name="app" />
+
+
+
+
+
+    <script data-main="//static-web.last.fm/static/js-build/init.a0a8f0872d00" src="//static-web.last.fm/static/js-build/lib/require/require.df447417ad50.js"></script>
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body
+        class="
+
+    large-header-layout
+    two-column-layout
+
+            namespace--user_followers
+
+
+
+
+
+
+        "
+        data-require="ads/page-ads,ads/netseer-ads,player/playlink-handler,dev/grid-overlay,dev/debug-log,dev/js-log,components/link-block,components/ajax-form,core/media-size-events"
+
+        data-player-supported="true"
+        data-country-code="UA"
+
+    >
+        <div
+            data-require="components/open-modal,components/show-alert,shim/remove-focus"
+        ></div>
+
+
+
+        <div class="top-bar">
+            <div class="semi-fluid-container js-loading-indicator-container">
+
+
+    <section
+        data-require="player/controls"
+        data-player-status-ad-playing="Ad playing"
+        data-player-status-inactive="&nbsp;"
+        data-player-status-loading-spotify="Connecting Spotify…"
+        data-player-status-communication-error-spotify="Could not connect to Spotify. Try reloading the page."
+        data-player-status-spotify-signup="Could not find Spotify. Starting installation…"
+
+        data-player-error-cannot-play-item="Sorry, that item can&#39;t be played right now"
+
+        class="
+            player-bar
+            inactive
+        "
+        aria-label="audio player"
+        aria-disabled="true"
+        role="region"
+    >
+
+
+
+        <div class="player-bar-controls">
+
+            <ul aria-label="controls" class="media-controls">
+                <li>
+                    <button
+                        disabled="true"
+                        class="
+                            js-previous
+                            player-bar-btn
+                            player-bar-btn--previous
+                        "
+                    >
+                        Previous
+                    </button>
+                </li>
+                <li>
+                    <button
+                        disabled="true"
+                        class="
+                            js-play-pause
+                            player-bar-btn
+                            player-bar-btn--play
+                        "
+                        data-string-pause="Pause"
+                    >
+                        Play
+                    </button>
+                </li>
+                <li>
+                    <button
+                        disabled="true"
+                        class="
+                            js-next
+                            player-bar-btn
+                            player-bar-btn--next
+                        "
+                    >
+                        Next
+                    </button>
+                </li>
+
+            </ul>
+
+            <div class="source-info">
+                <a class="
+                        js-source
+                        player-bar-source
+                        player-bar-source--spotify
+                    "
+                    href="#"
+                    target="_blank"
+                >Playing via Spotify</a>
+
+                <a class="
+                        js-source
+                        player-bar-source
+                        player-bar-source--youtube
+                    "
+                    href="#"
+                    target="_blank"
+                >Playing via YouTube</a>
+
+
+                    <a href="https://secure.last.fm/login?next=/settings/website"
+                       class="player-bar-btn player-bar-btn--settings">
+                       Playback settings
+                    </a>
+
+            </div>
+
+            <a class="
+                    player-bar-skiplink
+                    player-bar-skiplink--youtube
+                "
+                href="#youtube-video"
+            >Skip to <br/> YouTube video</a>
+
+        </div>
+
+        <div class="player-bar-now-playing">
+
+
+
+            <p
+                class="player-bar-track js-player-status"
+                aria-label="now playing"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                Loading player…
+            </p>
+
+            <p class="player-bar-error js-player-error">
+                <span class="player-bar-error-message js-player-error-message"></span>
+            </p>
+
+
+
+            <div
+                class="player-bar-progress"
+                aria-label="progress"
+                role="timer"
+            >
+                <div
+                    class="
+                        js-progress-slug
+                        player-bar-progress-slug
+                    "
+                ></div>
+                <span
+                    class="
+                        js-progress-elapsed
+                        player-bar-progress-elapsed
+                    "
+                    aria-label="elapsed"
+                ></span>
+                <span
+                    class="
+                        js-progress-remaining
+                        player-bar-progress-remaining
+                    "
+                    aria-label="remaining"
+                ></span>
+            </div>
+        </div>
+        <div data-require="player/scrobble-client"></div>
+    </section>
+
+
+            </div>
+        </div>
+
+
+    <div id="content" class="main-content" role="main">
+
+
+    <div id="tlmdata" hidden class="hidden"
+         data-environment="prod"
+         data-site-section="user"
+         data-page-type="user_followers_list"
+         data-page-name="user/followers"
+
+
+
+
+        data-user-state="not authenticated"
+        data-user-type="anon"
+        data-device-type="desktop"
+        data-ip-geo="UA">
+     </div>
+
+
+
+
+        <div class="top-bar-overlay">
+            <div class="semi-fluid-container js-loading-indicator-container">
+
+
+       <ul class="site-auth">
+
+
+        <li class="auth-hide-show auth-menu-item">
+            <a
+                class="auth-link"
+                href="https://secure.last.fm/join"
+                data-analytics-action="SignUpClick"
+            >
+                Join
+            </a>
+        </li>
+
+
+
+
+        <li class="auth-hide-show auth-menu-item">
+            <a
+                class="auth-link auth-login-link"
+                href="https://secure.last.fm/login"
+            >
+                Login
+            </a>
+        </li>
+
+
+        </ul>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<nav
+    class="masthead"
+    role="navigation"
+    data-require="components/masthead"
+    aria-label="Primary navigation"
+>
+    <div class="container">
+
+        <div class="masthead-fixed">
+            <h1 class="masthead-logo">
+                <a href="/">Last.fm Logo</a>
+            </h1>
+
+            <button
+                class="
+                    masthead-hamburger-toggle
+
+                "
+                data-toggle="collapse"
+                data-target=".masthead-nav-links"
+            >
+                Toggle navigation
+            </button>
+
+
+
+
+
+            <div class="collapse masthead-nav-links js-nav-links">
+                <ul>
+
+
+                    <li><a href="/dashboard">Live</a></li>
+                    <li><a href="/music">Music</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/features">Features</a></li>
+                    <li class="auth-hide-show">
+                        <a
+                            href="/inbox"
+                            class="notification-count-menu-item"
+                        >
+                            Inbox
+
+
+
+
+                        </a>
+                    </li>
+
+
+
+        <li class="auth-hide-show auth-menu-item">
+            <a
+                class="auth-link auth-login-link"
+                href="https://secure.last.fm/login"
+            >
+                Login
+            </a>
+        </li>
+
+
+
+
+        <li class="auth-hide-show auth-menu-item">
+            <a
+                class="auth-link"
+                href="https://secure.last.fm/join"
+                data-analytics-action="SignUpClick"
+            >
+                Join
+            </a>
+        </li>
+
+
+
+                </ul>
+            </div>
+
+            <a class="masthead-search-link" href="/search">Search</a>
+        </div>
+
+
+
+
+
+    <form class="search-form" action="/search" method="get">
+        <label for="site-search" class="sr-only">Search</label>
+        <input
+            id="site-search"
+            class="search-field"
+            type="text"
+            name="q"
+            placeholder="Search"
+            value=""
+        />
+        <button class="search-submit" type="submit">Search</button>
+    </form>
+
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <header class="
+        header
+
+            header--with-avatar
+
+
+
+            header--user
+
+
+    ">
+
+            <div class="header-background"></div>
+
+
+        <div class="container">
+            <div class="header-inner-wrap">
+
+                    <div class="header-avatar">
+                        <div class="header-avatar-inner-wrap">
+
+                                <a href="/user/valerianochka">
+
+    <img
+        src="http://img2-ak.lst.fm/i/u/avatar170s/e96824dbe42a4b0bcb8bae886a468cd1.png"
+        alt="valerianochka"
+        class="avatar"
+    />
+
+                                </a>
+
+                        </div>
+
+                    </div>
+
+                <div class="header-info">
+
+    <div class="header-info-primary header-info-primary--with-featured-track">
+        <div class="header-title-label-wrap">
+            <h1 class="header-title">
+
+
+    <a
+            href="/user/valerianochka"
+
+        >valerianochka</a>
+            </h1>
+
+
+        </div>
+
+
+
+
+
+    <nav
+        class="
+            secondary-nav
+            secondary-nav--scrollable
+
+                secondary-nav--more
+
+
+        "
+        role="navigation"
+        aria-label="Secondary navigation"
+
+            data-require="components/secondary-nav"
+            data-more-string="More…"
+
+    >
+        <ul class="secondary-nav-list js-secondary-nav-list">
+            <li class="
+                        secondary-nav-item
+
+                            secondary-nav-item--overview
+
+                    "
+                    role="tab"
+                    aria-selected="false"
+                >
+
+                        <a
+                            class="
+                                secondary-nav-item-link
+
+                            "
+                            href="/user/valerianochka"
+
+                        >
+                            Overview
+                        </a>
+
+                </li><li class="
+                        secondary-nav-item
+
+                            secondary-nav-item--library
+
+                    "
+                    role="tab"
+                    aria-selected="false"
+                >
+
+                        <a
+                            class="
+                                secondary-nav-item-link
+
+                            "
+                            href="/user/valerianochka/library"
+
+                        >
+                            Library
+                        </a>
+
+                </li><li class="
+                        secondary-nav-item
+
+                            secondary-nav-item--following
+
+                    "
+                    role="tab"
+                    aria-selected="false"
+                >
+
+                        <a
+                            class="
+                                secondary-nav-item-link
+
+                            "
+                            href="/user/valerianochka/following"
+
+                        >
+                            Following
+                        </a>
+
+                </li><li class="
+                        secondary-nav-item
+
+                            secondary-nav-item--followers
+
+                    "
+                    role="tab"
+                    aria-selected="true"
+                >
+
+                        <a
+                            class="
+                                secondary-nav-item-link
+
+                                    secondary-nav-item-link--active
+
+                            "
+                            href="/user/valerianochka/followers"
+
+                        >
+                            Followers
+                        </a>
+
+                </li><li class="
+                        secondary-nav-item
+
+                            secondary-nav-item--loved
+
+                    "
+                    role="tab"
+                    aria-selected="false"
+                >
+
+                        <a
+                            class="
+                                secondary-nav-item-link
+
+                            "
+                            href="/user/valerianochka/loved"
+
+                        >
+                            Loved Tracks
+                        </a>
+
+                </li><li class="
+                        secondary-nav-item
+
+                            secondary-nav-item--events
+
+                    "
+                    role="tab"
+                    aria-selected="false"
+                >
+
+                        <a
+                            class="
+                                secondary-nav-item-link
+
+                            "
+                            href="/user/valerianochka/events"
+
+                        >
+                            Events
+                        </a>
+
+                </li><li class="
+                        secondary-nav-item
+
+                            secondary-nav-item--shoutbox
+
+                    "
+                    role="tab"
+                    aria-selected="false"
+                >
+
+                        <a
+                            class="
+                                secondary-nav-item-link
+
+                            "
+                            href="/user/valerianochka/shoutbox"
+
+                        >
+                            Shouts
+                        </a>
+
+                </li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+        <div id="mantle_skin" class="adaptive-skin-container">
+            <div class="adaptive-skin-wrapper">
+                <div id="adSkinLeft" class="adaptive-skin-left"></div>
+                <div id="adSkinRight" class="adaptive-skin-right"></div>
+            </div>
+
+
+
+
+            <div id="skin" class="skin lastfm-ad" data-ads-placement='{&#34;sizes&#34;: [[1600, 1000]], &#34;collapse_before_load&#34;: true, &#34;id&#34;: &#34;skin&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;top&#34;}}'></div>
+
+
+
+
+
+
+                <div class="content-top">
+                    <div class="content-top-inner-wrap">
+
+
+
+
+
+            <div id="leader_top" class="leader_top lastfm-ad" data-ads-placement='{&#34;sizes&#34;: [[728, 90], [970, 66], [970, 250]], &#34;id&#34;: &#34;leader_top&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;top&#34;}}'></div>
+
+
+
+
+
+
+
+            <div id="mobile_pos_1" class="mobile_pos_1 lastfm-ad-mobile" data-ads-placement='{&#34;sizes&#34;: [[320, 50]], &#34;id&#34;: &#34;mobile_pos_1&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;1&#34;}, &#34;is_mobile&#34;: true}'></div>
+
+
+
+
+
+                        <div class="container content-top-lower">
+
+
+
+
+
+
+
+
+
+
+                                    <h1 class="content-top-header">
+
+    Followers (55)
+
+                                    </h1>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="container page-content">
+
+    <div class="row">
+        <div class="col-main">
+
+
+
+        <section class="follower-items-section">
+            <ul class="user-list">
+
+                    <li class="user-list-item">
+                        <div class="user-list-content">
+
+                                <a href="/user/aerojambi"
+                                   title=" user"
+                                   class="img user-status-dot user-status-None">
+                                    <img src="http://img2-ak.lst.fm/i/u/avatar70s/2d4fc56946aa47c9c78125c7c7d6fc1c.png"
+                                         class="avatar"
+                                         alt="The avatar of aerojambi">
+                                </a>
+
+
+                            <div class="text-container">
+                                <div class="username">
+
+        <a href="/user/aerojambi">aerojambi</a>
+
+                                </div>
+                                <div>
+
+
+                                            dimabaraulin
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="user-list-item">
+                        <div class="user-list-content">
+
+                                <a href="/user/PPDeluXe"
+                                   title=" user"
+                                   class="img user-status-dot user-status-None">
+                                    <img src="http://img2-ak.lst.fm/i/u/avatar70s/af70f81d555a43aec3f6b3852c634a70.png"
+                                         class="avatar"
+                                         alt="The avatar of PPDeluXe">
+                                </a>
+
+
+                            <div class="text-container">
+                                <div class="username">
+
+        <a href="/user/PPDeluXe">PPDeluXe</a>
+
+                                </div>
+                                <div>
+
+
+                                            Peter
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="user-list-item">
+                        <div class="user-list-content">
+
+                                <a href="/user/Jailbird_82"
+                                   title=" user"
+                                   class="img user-status-dot user-status-None">
+                                    <img src="http://img2-ak.lst.fm/i/u/avatar70s/3903799665a548f4c8ef0eb6110f5846.png"
+                                         class="avatar"
+                                         alt="The avatar of Jailbird_82">
+                                </a>
+
+
+                            <div class="text-container">
+                                <div class="username">
+
+        <a href="/user/Jailbird_82">Jailbird_82</a>
+
+                                </div>
+                                <div>
+
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="user-list-item">
+                        <div class="user-list-content">
+
+                                <a href="/user/hed1nn"
+                                   title=" user"
+                                   class="img user-status-dot user-status-None">
+                                    <img src="http://img2-ak.lst.fm/i/u/avatar70s/70e7ac8b1d284f9ccf7b6b434f22b661.png"
+                                         class="avatar"
+                                         alt="The avatar of hed1nn">
+                                </a>
+
+
+                            <div class="text-container">
+                                <div class="username">
+
+        <a href="/user/hed1nn">hed1nn</a>
+
+                                </div>
+                                <div>
+
+
+                                            Дмитрий
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="user-list-item">
+                        <div class="user-list-content">
+
+                                <a href="/user/Yon_Tihi"
+                                   title=" user"
+                                   class="img user-status-dot user-status-None">
+                                    <img src="http://img2-ak.lst.fm/i/u/avatar70s/620f33b843784332c378742f9f8ff600.png"
+                                         class="avatar"
+                                         alt="The avatar of Yon_Tihi">
+                                </a>
+
+
+                            <div class="text-container">
+                                <div class="username">
+
+        <a href="/user/Yon_Tihi">Yon_Tihi</a>
+
+                                </div>
+                                <div>
+
+
+                                            Vadim
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+            </ul>
+        </section>
+
+
+
+        <h2 class="sr-only">Pagination</h2>
+
+        <ul class="pagination">
+            <li class="previous">
+
+                    <a href="?page=1">Previous</a>
+
+            </li>
+            <li class="pages">
+                Page 2 of 2
+            </li>
+            <li class="next">
+
+            </li>
+        </ul>
+
+
+
+
+
+        </div>
+        <div class="col-sidebar col-sidebar--long">
+
+
+
+
+
+
+
+
+            <div id="mpu_top" class="mpu_top lastfm-ad" data-ads-placement='{&#34;sizes&#34;: [[300, 250], [300, 600]], &#34;id&#34;: &#34;mpu_top&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;top&#34;}}'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="mobile_pos_2" class="mobile_pos_2 lastfm-ad-mobile" data-ads-placement='{&#34;sizes&#34;: [[300, 250]], &#34;id&#34;: &#34;mobile_pos_2&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;2&#34;}, &#34;is_mobile&#34;: true}'></div>
+
+
+
+
+
+
+        <div class="related-content YAD-fe834359-9b36-3648-937f-41ddf68a74f2" data-require="ads/yahoo-related-content" data-type="fe834359-9b36-3648-937f-41ddf68a74f2"></div>
+
+
+
+
+
+
+            <div id="mobile_pos_3" class="mobile_pos_3 lastfm-ad-mobile" data-ads-placement='{&#34;sizes&#34;: [[300, 250], [320, 50]], &#34;id&#34;: &#34;mobile_pos_3&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;3&#34;}, &#34;is_mobile&#34;: true}'></div>
+
+
+
+
+
+
+
+
+
+
+            <div id="mpu_bottom" class="mpu_bottom lastfm-ad" data-ads-placement='{&#34;sizes&#34;: [[300, 250]], &#34;id&#34;: &#34;mpu_bottom&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;bottom&#34;}}'></div>
+
+
+
+
+    <div class="related-ads">
+            <div id="NETSEER_AD_UNIT_ID" data-netseer-params='{"netseer_imp_src": "2", "netseer_tag_id": "20632", "netseer_task": "ad", "netseer_append_location": "NETSEER_AD_UNIT_ID", "netseer_ad_width": "300", "netseer_imp_type": "1", "netseer_ad_height": "250"}'></div>
+        </div>
+
+
+        </div>
+    </div>
+
+                </div>
+
+
+
+                <div class="container">
+
+
+
+
+            <div id="leader_bottom" class="leader_bottom lastfm-ad" data-ads-placement='{&#34;sizes&#34;: [[728, 90], [970, 66]], &#34;id&#34;: &#34;leader_bottom&#34;, &#34;targeting&#34;: {&#34;pos&#34;: &#34;bottom&#34;}}'></div>
+
+
+
+                </div>
+
+        </div>
+
+
+    <div id="qa-page-load"></div>
+
+
+    <footer class="footer-wrapper">
+        <div class="container">
+            <div class="footer row">
+                <div class="col-xs-12">
+                    <ul class="site-links">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/about/contact">Contact</a></li>
+                        <li><a href="http://www.last.fm/api">Developer API</a></li>
+
+                            <li><a href="https://getsatisfaction.com/lastfm" target="_BLANK">Community Support</a></li>
+
+
+                            <li><a href="http://cbsi.force.com/CBSi/lastfm" target="_BLANK">Help</a></li>
+
+
+                        <li><a href="/help/guidelines">Community Guidelines</a></li>
+                        <li><a href="/music/+free-music-downloads">Free Music Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <ul class="language-selector" id="language-selector">
+
+                            <li>
+
+                                    <strong class="active">English</strong><span class="sr-only">current language</span>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="de" />
+                                        <button class="mimic-link" name="de" type="submit">Deutsch</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="es" />
+                                        <button class="mimic-link" name="es" type="submit">Español</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="fr" />
+                                        <button class="mimic-link" name="fr" type="submit">Français</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="it" />
+                                        <button class="mimic-link" name="it" type="submit">Italiano</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="ja" />
+                                        <button class="mimic-link" name="ja" type="submit">日本語</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="pl" />
+                                        <button class="mimic-link" name="pl" type="submit">Polski</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="pt" />
+                                        <button class="mimic-link" name="pt" type="submit">Português</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="ru" />
+                                        <button class="mimic-link" name="ru" type="submit">Русский</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="sv" />
+                                        <button class="mimic-link" name="sv" type="submit">Svenska</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="tr" />
+                                        <button class="mimic-link" name="tr" type="submit">Türkçe</button>
+                                    </form>
+
+                            </li>
+
+                            <li>
+
+                                    <form action="/i18n/setlang/" method="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='Ni9Qd55exxp3TcWpCGMh88IA3cgtDvSx' />
+                                        <input type="hidden" name="language" value="zh" />
+                                        <button class="mimic-link" name="zh" type="submit">简体中文</button>
+                                    </form>
+
+                            </li>
+
+                    </ul>
+                </div>
+                <div class="logo col-xs-2">
+                    <img src="//static-web.last.fm/static/images/footer_logo.ddcfd65712a6.png">
+                </div>
+                <div class="copyright col-xs-12">
+                    <ul class="list-inline legal">
+                        <li><a href="http://www.cbsinteractive.com/">CBS Interactive</a> © 2015 Last.fm Ltd. All rights reserved</li>
+                        <li><a href="/legal/terms">Terms of Use</a></li>
+                        <li><a href="/legal/privacy">Privacy Policy</a></li>
+                        <li><a href="/legal">Legal Policies</a></li>
+                        <li><a href="http://www.gamespot.com">Gamespot</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div
+    class="
+        feedback-message
+
+    "
+>
+    <div class="feedback-message-inner">
+        <p>
+            <span class="hidden-xs">
+                You’re viewing a beta version of the new Last.fm website.
+            </span>
+            <a href="http://cbsi.force.com/CBSi/template_lfmfbk?p_userid=" target="_blank">Leave feedback</a>
+        </p>
+
+            <a class="feedback-message-dismiss" href="/feedback/dismiss">Hide</a>
+
+    </div>
+</div>
+    </footer>
+
+
+    <section class="debug-log">
+    <h2>API Calls</h2>
+
+</section>
+
+
+
+
+        <div
+            data-ads-targeting='{&#34;beta&#34;: &#34;yes&#34;, &#34;lang&#34;: &#34;en&#34;, &#34;ptype&#34;: &#34;user_followers_list&#34;, &#34;geo&#34;: &#34;UA&#34;, &#34;ar&#34;: &#34;&#34;}'
+            data-ads-unitname='/8264/row-lastfm/user/followers'
+            data-ads-unitname-mobile='/8264/maw-lastfm/user/followers'
+        ></div>
+
+
+    </div>
+
+
+        <div
+            data-require="player/providers/spotify/spotify-provider"
+            data-spotify-modal="/player/modal/spotify"
+        ></div>
+
+        <div
+            data-require="player/providers/youtube/youtube-provider"
+            class="
+                video-player
+                video-player--hidden
+            "
+            aria-hidden="true"
+            id="youtube-video"
+        >
+            <div class="container">
+                <div class="video-player-embed js-player"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+            <div id="intromercial" class="intromercial lastfm-ad" data-ads-placement='{&#34;out_of_page&#34;: true, &#34;id&#34;: &#34;intromercial&#34;}'></div>
+
+
+
+
+
+
+
+            <div id="mobile_intromercial" class="mobile_intromercial lastfm-ad-mobile" data-ads-placement='{&#34;out_of_page&#34;: true, &#34;id&#34;: &#34;mobile_intromercial&#34;, &#34;is_mobile&#34;: true}'></div>
+
+
+
+
+    </body>
+</html>
