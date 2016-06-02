@@ -120,6 +120,7 @@ class Listener(Base, HBase):
     connection_followers = Column(Integer, nullable=True)
     connection_followees = Column(Integer, nullable=True)
 
+    # trad about relationship in sqlalchemy
     followers = relationship("Listener",
                              secondary=Connection.__table__,
                              primaryjoin=id == Connection.followee_id,
@@ -184,6 +185,7 @@ class Listener(Base, HBase):
             page_url = "http://www.last.fm/user/" + self.id + '/' + typeofconnection + (
             '' if page == 1 else ('?page=%s' % (page,)))
 
+            # grabbing page
             html = get_page(page_url)
 
             if not html:
@@ -192,13 +194,17 @@ class Listener(Base, HBase):
 
             print("Grabbing page `%s` of `%s`" % (page, pages))
 
+            # parsing number of pages to grap
             search_for_pages = re.search('<li class="pages">\s+Page\s+\d+\s+of\s+(\d+)\s+</li>', html, re.M)
 
             if search_for_pages and search_for_pages.groups(1):
                 pages = int(search_for_pages.groups(1)[0])
 
+                "\naaaa\naaaaaaaa\naaa"
+
+            # usernames
             names = re.findall(
-                    '<li class="user-list-item">.*?<div class="username">.*?<a href="/user/([^"]+)"', html,
+                    '^<li class="user-list-item">.*?<div class="username">.*?<a href="/user/([^"]+)"', html,
                     re.M | re.DOTALL)
 
             for name in names:
