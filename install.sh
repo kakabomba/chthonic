@@ -160,7 +160,13 @@ apt-get install postgresql-9.4" sudo deb
 
 function menu_deb {
     conf_comm "apt-get update
-apt-get install libpq-dev python-dev libapache2-mod-wsgi-py3 libjpeg-dev" sudo hosts
+apt-get install libpq-dev python3-dev python-virtualenv" sudo tor
+    }
+
+function menu_tor {
+    conf_comm "add-apt-repository ppa:webupd8team/tor-browser
+apt-get update
+apt-get install tor-browser" sudo tor
     }
 
 function menu_hosts {
@@ -239,10 +245,11 @@ rm -rf 'Python-$pversion'" sudo venv
 
 function menu_venv {
     destdir=$(rr 'destination dir for virtual directory' .venv)
+    pver=$(rr 'python file' $(which python3))
     if [[ -e $destdir ]]; then
 	echo "error: $destdir exists"
     else
-	conf_comm "pyvenv $destdir
+	conf_comm "virtualenv -p $pver $destdir
 cp ./activate_this.py $destdir/bin" nosudo modules
     fi
     }
@@ -376,6 +383,7 @@ dialog --title "profireader" --nocancel --default-item $next --menu "Choose an o
 "origin" "change git origin and add new remote repo" \
 "postgres_9_4" "install postgres 9.4" \
 "deb" "install deb packages" \
+"tor" "install tor browser" \
 "hosts" "create virtual domain zone in /etc/hosts" \
 "haproxy_compile" "compile and install haproxy" \
 "haproxy_config" "copy haproxy config to /etc/haproxy" \
