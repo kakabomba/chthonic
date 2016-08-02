@@ -187,6 +187,7 @@ class Listener(Base, HBase):
 
             # grabbing page
             html = get_page(page_url)
+            # print(html)
 
             if not html:
                 self.last_error = 'page `%s` not given' % (page_url,)
@@ -200,12 +201,11 @@ class Listener(Base, HBase):
             if search_for_pages and search_for_pages.groups(1):
                 pages = int(search_for_pages.groups(1)[0])
 
-                "\naaaa\naaaaaaaa\naaa"
-
             # usernames
             names = re.findall(
-                    '^<li class="user-list-item">.*?<div class="username">.*?<a href="/user/([^"]+)"', html,
+                    '<li class="user-list-item">.*?<div class="username">.*?<a href="/user/([^"]+)"', html,
                     re.M | re.DOTALL)
+            print(names)
 
             for name in names:
                 if typeofconnection == 'followers':

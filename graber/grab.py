@@ -7,7 +7,9 @@ from sqlalchemy.sql import func
 # ret = Listener.add_if_not_exists(app.state['grab_user'], True)
 
 while True:
-    less_followee = app.engine.execute("WITH time_span as (SELECT count(*), extract(epoch from min(cr_tm)) as mint, extract(epoch from max(cr_tm))+1 as maxt FROM listener WHERE connection_followees is NULL) SELECT * FROM time_span, listener WHERE cr_tm > to_timestamp(time_span.mint + (time_span.maxt - time_span.mint)* random()) LIMIT 1").fetchone()
+    less_followee = app.engine.execute("WITH time_span as (SELECT count(*), extract(epoch from min(cr_tm)) as mint, extract(epoch from max(cr_tm))+0.0001 as maxt FROM listener WHERE connection_followees is NULL) SELECT * FROM time_span, listener WHERE cr_tm > to_timestamp(time_span.mint + (time_span.maxt - time_span.mint)* random()) LIMIT 1").fetchone()
+    # less_followee = app.engine.execute("SELECT * FROM listener LIMIT 1").fetchone()
+    # print(less_followee)
     # less_followee = app.db.query(Listener.id).filter(Listener.connection_followees == None). \
     #     outerjoin(Connection, Connection.followee_id == Listener.id). \
     #     group_by(Listener.id). \

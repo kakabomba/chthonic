@@ -256,6 +256,19 @@ source $destdir/bin/activate
 pip3 install -I -r $req" nosudo bower_components_dev
     }
 
+function menu_stem {
+    venv=$(rr 'virtual environment directory' .venv)
+    conf_comm "source $venv/bin/activate
+wget https://pypi.python.org/packages/source/s/stem/stem-1.4.1b.tar.bz2
+bzip2 -d stem-1.4.1b.tar.bz2
+tar -xf stem-1.4.1b.tar
+cd stem-1.4.1
+python setup.py install
+cd ..
+rm stem-1.4.1b.tar
+rm -rf stem-1.4.1" nosudo modules
+}
+
 function menu_port {
     toport=$(rr 'redirect port 80 to port' 8080)
     conf_comm "iptables -t nat -A OUTPUT  -d 127.0.0.1  -p tcp --dport 80 -j REDIRECT --to-port $toport" sudo db_user_bass
@@ -367,12 +380,10 @@ dialog --title "profireader" --nocancel --default-item $next --menu "Choose an o
 "haproxy_compile" "compile and install haproxy" \
 "haproxy_config" "copy haproxy config to /etc/haproxy" \
 "apache2_config" "copy apache config to /etc/apache2 and allow currend dir" \
-"secret_data" "download secret data" \
-"secret_client" "download secret client data" \
-"download_key_pem" "download https key and pem file" \
 "python_3" "install python 3" \
 "venv" "create virtual environment" \
 "modules" "install required python modules (via pip)" \
+"stem" "install stem (tor connection package)" \
 "bower_components_dev" "get bower components (development version)" \
 "db_user_pass" "create postgres user/password" \
 "db_rename" "rename database (create backup)" \
