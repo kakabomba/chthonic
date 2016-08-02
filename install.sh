@@ -147,7 +147,16 @@ function runsql_dump {
 function menu_origin {
     destination=`git remote -v | grep 'fetch' | sed -e 's/^.*github.com:\([^\/]*\)\/.*$/\1/g'`
     conf_comm "git remote rename origin $destination
-git remote add origin git@github.com:kakabomba/profireader.git" nosudo postgres_9_4
+git remote add origin git@github.com:kakabomba/profireader.git" nosudo gitconfig
+    }
+
+function menu_gitconfig {
+    hostn=$(hostname)
+    conf_comm "git config --global user.email 'kakabomba@gmail.com' 
+git config --global user.name 'Oles Zaburannyi'
+git config --global push.default matching
+ssh-keygen -t rsa -b 4096 -C 'oles@$hostn'
+cat ~/.ssh/id_rsa.pub" nosudo postgres_9_4
     }
 
 function menu_postgres_9_4 {
@@ -381,6 +390,7 @@ do
 #next='exit'
 dialog --title "profireader" --nocancel --default-item $next --menu "Choose an option" 22 78 17 \
 "origin" "change git origin and add new remote repo" \
+"gitconfig" "some git configuration changes" \
 "postgres_9_4" "install postgres 9.4" \
 "deb" "install deb packages" \
 "tor" "install tor browser" \
